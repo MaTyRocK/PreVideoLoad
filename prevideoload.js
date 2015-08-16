@@ -6,22 +6,25 @@
 	*	autoPlay: true for play the video after the event is launched. Default true
 	*	ytimg: quality of youtube's video thumbnail. Default 0. Can be: 0 (full-size) | 1 | 2 | 3 | default | hqdefault | mqdefault | sddefault | maxresdefault (max-resolution)
 	*	vmimg: quality of vimeo's video thumbnail. Default large. Can be: small | medium | large
+	*	vmcache: cache vimeo's video thumbnail
 	*/
 	$.fn.PreVideoLoad = function(options){
 		var defaults = {
 			autoPlay: true,
 			event: 'click',
 			ytimg: '0',
-			vmimg: 'large'
+			vmimg: 'large',
+			vmcache: true
     		};
 		options = $.extend({}, defaults, options); 
 		this.each(function(){
 			var a = $(this), b = a.attr('data-videoid');
 			if($(this).hasClass('PreVimeo')){
-				$.ajax("//vimeo.com/api/v2/video/"+b+".json").done(function(j){
+				$.ajax({url:"//vimeo.com/api/v2/video/"+d+".json",dataType:'jsonp',cache:options.vmcache,contentType:'application/json; charset=utf8',type:'GET'})
+				.done(function(j){
 					var t = j[0]['thumbnail_'+options.vmimg];
 					a.css('background-image',"url("+t+")")
-				}).error(function(){console.log('Cannot load thumb of a Vimeo video.')});
+				});
 				a.html('<a class="PreVideoLoadPlay PreVimeoPlay" href="//vimeo.com/'+b+'" target="_blank"></a>');
 				a.find('a.PreVimeoPlay').on(options.event,function(event){
 					event.preventDefault();
