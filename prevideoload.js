@@ -1,12 +1,19 @@
 /* PreVideoLoad: load videos when you need. (c) Matias Pizarro. MIT Lic. http://git.io/v3dYO */
 !function($){
+	/*!
+	*	Options:
+	*	event: when to load video. Default 'click'
+	*	autoPlay: true for play the video after the event is launched. Default true
+	*	ytimg: quality of youtube's video thumbnail. Default 0. Can be: 0 (full-size) | 1 | 2 | 3 | default | hqdefault | mqdefault | sddefault | maxresdefault (max-resolution)
+	*	vmimg: quality of vimeo's video thumbnail. Default large. Can be: small | medium | large
+	*/
 	$.fn.PreVideoLoad = function(options){
 		var defaults = {
 			autoPlay: true,
 			event: 'click',
 			ytimg: '0',
 			vmimg: 'large'
-    	};
+    		};
 		options = $.extend({}, defaults, options); 
 		this.each(function(){
 			var a = $(this), b = a.attr('data-videoid');
