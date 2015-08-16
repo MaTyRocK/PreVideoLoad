@@ -64,6 +64,8 @@ var options = {
 $('.PreVideoLoad').PreVideoLoad(options);
 </pre>
 
+# <a href="http://matyrock.github.io/PreVideoLoad/">Website</a> | <a href="http://matyrock.github.io/PreVideoLoad/demo.html">Demo</a>
+
 # Future features
 <ul>
 <li>Override defaults by setting options to the divs</li>
