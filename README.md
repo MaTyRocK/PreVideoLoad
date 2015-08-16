@@ -1,5 +1,6 @@
 # PreVideoLoad
 Ultralight weight jQuery plugin for load thumb of videos from Vimeo and Youtube and load fully when is needed.
+
 The js file size is only 1971 bytes! The css size is 9695 bytes due to base64 images. Use an external image and the css weight will be even less than the js file!
 
 # Features
