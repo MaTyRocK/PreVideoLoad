@@ -1,0 +1,33 @@
+/* PreVideoLoad: load videos when you need. (c) Matias Pizarro. MIT Lic. http://git.io/v3dYO */
+!function($){
+	$.fn.PreVideoLoad = function(options){
+		var defaults = {
+			autoPlay: true,
+			event: 'click',
+			ytimg: '0',
+			vmimg: 'large'
+    	};
+		options = $.extend({}, defaults, options); 
+		this.each(function(){
+			var a = $(this), b = a.attr('data-videoid');
+			if($(this).hasClass('PreVimeo')){
+				$.ajax("//vimeo.com/api/v2/video/"+b+".json").done(function(j){
+					var t = j[0]['thumbnail_'+options.vmimg];
+					a.css('background-image',"url("+t+")")
+				}).error(function(){console.log('Cannot load thumb of a Vimeo video.')});
+				a.html('<a class="PreVideoLoadPlay PreVimeoPlay" href="//vimeo.com/'+b+'" target="_blank"></a>');
+				a.find('a.PreVimeoPlay').on(options.event,function(event){
+					event.preventDefault();
+					$(this).parent().html('<iframe class="PreVideoLoadPlayer PreVimeoPlayer" src="//player.vimeo.com/video/'+b+'?color=039be5&autoplay='+(options.autoPlay?1:0)+'" frameborder="0" allowfullscreen></iframe>');
+				});
+			} else if($(this).hasClass('PreYoutube')){
+				a.css('background-image',"url(//i3.ytimg.com/vi/"+b+"/"+options.ytimg+".jpg)");
+				a.html('<a class="PreVideoLoadPlay PreYoutubePlay" href="//www.youtube.com/watch?v='+b+'" target="_blank"></a>');
+				a.find('a.PreYoutubePlay').on(options.event,function(event){
+					event.preventDefault();
+					$(this).parent().html('<iframe class="PreVideoLoadPlayer PreYoutubePlayer" src="//www.youtube.com/embed/'+b+'?autoplay='+(options.autoPlay?1:0)+'" frameborder="0" allowfullscreen></iframe>');
+				});
+			}
+		});
+	};
+}(jQuery);
