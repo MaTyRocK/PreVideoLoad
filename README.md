@@ -3,6 +3,8 @@ Ultralight weight jQuery plugin for load thumb of videos from Vimeo and Youtube 
 
 The js file size is only 1971 bytes! The css size is 9695 bytes due to base64 images. Use an external image and the css weight will be even less than the js file!
 
+## <a href="http://matyrock.github.io/PreVideoLoad/demo.html">Demo</a>
+
 # Features
 <ul>
 <li>Small filesize</li>
@@ -14,36 +16,36 @@ The js file size is only 1971 bytes! The css size is 9695 bytes due to base64 im
 # Starting
 Loading files:
 
-<pre>
-&lt;link rel="stylesheet" type="text/css" href="prevideoload.css"&gt;
-&lt;script src="jquery-1.11.3.min.js"&gt;&lt;/script&gt;
-&lt;script src="prevideoload.js"&gt;&lt;/script&gt;
-</pre>
+``` html
+<link rel="stylesheet" type="text/css" href="prevideoload.css">
+<script src="jquery-1.11.3.min.js"></script>
+<script src="prevideoload.js"></script>
+```
 
-You can put the script in the bottom (before </body>), but you could see 'ghost' if you insert alternate content in video container.
+You can put the script in the bottom (before `</body>`), but you could see 'ghost' if you insert alternate content in video container.
 
 # Example
-<pre>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;link rel="stylesheet" type="text/css" href="prevideoload.css"&gt;
-&lt;script src="jquery-1.11.3.min.js"&gt;&lt;/script&gt;
-&lt;script src="prevideoload.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div class="PreVideoLoad PreVimeo" data-videoid="136084530"&gt;Alternate content for non-javascript users&lt;/div&gt;
-&lt;div class="PreVideoLoad PreYoutube" data-videoid="yOcPZvFd1k8"&gt;&lt;/div&gt;
-&lt;div class="PreVideoLoad PreVimeo" data-videoid="136084531"&gt;&lt;/div&gt;
-&lt;div class="PreVideoLoad PreYoutube" data-videoid="yOcPZvFd1k8"&gt;&lt;/div&gt;
-&lt;script type="text/javascript"&gt;
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="prevideoload.css">
+<script src="jquery-1.11.3.min.js"></script>
+<script src="prevideoload.js"></script>
+</head>
+<body>
+<div class="PreVideoLoad PreVimeo" data-videoid="136084530">Alternate content for non-javascript users</div>
+<div class="PreVideoLoad PreYoutube" data-videoid="yOcPZvFd1k8"></div>
+<div class="PreVideoLoad PreVimeo" data-videoid="136084531"></div>
+<div class="PreVideoLoad PreYoutube" data-videoid="yOcPZvFd1k8"></div>
+<script type="text/javascript">
 $(function(){
 	$('.PreVideoLoad').PreVideoLoad();
 });
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
+</script>
+</body>
+</html>
+```
 
 # Options
 <ul>
@@ -54,7 +56,7 @@ $(function(){
 </ul>
 
 # Setting options
-<pre>
+``` javascript
 var options = {
 	autoPlay: false,
 	event: 'onmouseover',
@@ -62,9 +64,7 @@ var options = {
 	vmimg: 'small'
 };
 $('.PreVideoLoad').PreVideoLoad(options);
-</pre>
-
-# <a href="http://matyrock.github.io/PreVideoLoad/">Website</a> | <a href="http://matyrock.github.io/PreVideoLoad/demo.html">Demo</a>
+```
 
 # Future features
 <ul>
