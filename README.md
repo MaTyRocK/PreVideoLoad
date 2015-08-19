@@ -1,7 +1,7 @@
 # PreVideoLoad
 Ultralight weight jQuery plugin for load thumb of videos from Vimeo and Youtube and load fully when is needed.
 
-The js file size is only 1971 bytes! The css size is 9695 bytes due to base64 images. Use an external image and the css weight will be even less than the js file!
+The js file size is only **1971 bytes**! The css size is 9695 bytes due to base64 images. **Use an external image and the css weight will be even less than the js file!**
 
 ## <a href="http://matyrock.github.io/PreVideoLoad/demo.html">Demo</a>
 
@@ -48,12 +48,10 @@ $(function(){
 ```
 
 # Options
-<ul>
-<li>@bool autoPlay (default true): true for play the video after click on the button</li>
-<li>@string event (default 'click'): when to load video</li>
-<li>@string ytimg (default 0): quality of youtube's video thumbnail. Can be: 0 | 1 | 2 | 3 | default | hqdefault | mqdefault | sddefault | maxresdefault</li>
-<li>@string vmimg (default large): quality of vimeo's video thumbnail. Can be: small | medium | large</li>
-</ul>
+- @bool `autoPlay` (default `true`): true for play the video after click on the button
+- @string `event` (default `click`): when to load video
+- @string `ytimg` (default `0`): quality of youtube's video thumbnail. Can be: 0 | 1 | 2 | 3 | default | hqdefault | mqdefault | sddefault | maxresdefault
+- @string `vmimg` (default `large`): quality of vimeo's video thumbnail. Can be: small | medium | large
 
 # Setting options
 ``` javascript
