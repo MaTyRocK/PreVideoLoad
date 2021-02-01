@@ -1,3 +1,7 @@
+**Note: I made this plugin when I was still learning jQuery and JavaScript in general. You should NOT use this! There are lots of good libraries that do the same but 1000x better.**
+
+-----
+
 # PreVideoLoad
 Ultralight weight jQuery plugin for load thumb of videos from Vimeo and Youtube and load fully when is needed.
 
